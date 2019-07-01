@@ -1,195 +1,58 @@
-@import '_color.sass'
-
-/*main*/
 main
-  padding-top: 72px
-  .container
-    @media (min-width:900px)
-      width: 576px
-    h1
-      font-size: 20px
-      font-weight: bold
-      color: #555
-      margin: 20px 0 20px 0
-      @media (min-width:768px )
-        margin: 25px 0
-        font-size: 24px
+  display: flex
+  justify-content: center
+  padding-top: 50px
 
-.ui-autocomplete
-  max-height: 300px
-  overflow-y: auto
-  overflow-x: hidden
+/*form_validation*/
+#formValidate
+  width: 500px
+  .formItem
+    display: flex
+    margin-bottom: 15px
+    align-items: center
+    .formItemLeft
+      flex: 0 1 250px
+      max-width: 250px
+      padding: 0 15px 0 0
+      text-align: right
+      label
+        font-weight: bold
+        margin: 0
+    .formItemRight
+      flex: 0 1 100%
+      position: relative
 
-body
-  margin: 0
-  padding: 0
-  border: none
+  //錯誤訊息樣式
+  input.error
+    border: 1px solid red
+    margin-bottom: 10px
+  label.error
+    padding-left: 6px
+    font-size: 14px
+    line-height: 14px
+    margin: 0
+    color: red
+    position: absolute
+    bottom: -9px
 
-.bg
-  background: url(../img/bg.png) top no-repeat
-  background-size: 100%
-  overflow: hidden
-  position: absolute
-  width: 400px
-  height: 100%
-  margin-top: 0
-  margin-left: 50%
-  -webkit-transform: translate(-50%)
-  -moz-transform: translate(-50%)
-  -ms-transform: translate(-50%)
-  -o-transform: translate(-50%)
-  transform: translate(-50%)
+  //placeholder文字樣式
+  input
+    &::placeholder
+      color: #ccc
 
-#message
-  position: absolute
-  text-align: center
-  height: 25px
-  font-size: 22px
-  margin-top: 110px
-  margin-left: 50%
-  -webkit-transform: translate(-50%)
-  -moz-transform: translate(-50%)
-  -ms-transform: translate(-50%)
-  -o-transform: translate(-50%)
-  transform: translate(-50%)
+  //select右側箭頭自訂樣式
+  select
+    background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljk1IDEwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6IzQ0NDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93czwvdGl0bGU+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iNC45NSIgaGVpZ2h0PSIxMCIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxLjQxIDQuNjcgMi40OCAzLjE4IDMuNTQgNC42NyAxLjQxIDQuNjciLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMy41NCA1LjMzIDIuNDggNi44MiAxLjQxIDUuMzMgMy41NCA1LjMzIi8+PC9zdmc+) no-repeat 97% 50%
+    //禁止ios設備的select預設樣式
+    appearance: none
 
-.lotterybg
-  background: url(../img/lotterybg.png) top no-repeat
-  background-size: 100%
-  overflow: visible
-  width: 80%
-  height: 100%
-  margin-top: 160px
-  margin-left: 50%
-  -webkit-transform: translate(-50%)
-  -moz-transform: translate(-50%)
-  -ms-transform: translate(-50%)
-  -o-transform: translate(-50%)
-  transform: translate(-50%)
+  //custom-control單多選框自訂樣式
+  .custom-control-input
+    &:checked ~ .custom-control-label::before
+      color: #fff
+      border-color: #333
+      background-color: #333
 
-#myCanvas
-  position: absolute
-  border: none
-  width: 285px
-  height: 170px
-  margin-top: 15px
-  margin-left: 50%
-  -webkit-transform: translate(-50%)
-  -moz-transform: translate(-50%)
-  -ms-transform: translate(-50%)
-  -o-transform: translate(-50%)
-  transform: translate(-50%)
-
-.lighting
-  display: block
-  max-width: 99%
-  margin-top: 0
-  margin-left: 0
-
-#start
-  position: absolute
-  z-index: 3
-  width: 202px
-  margin-top: 413px
-  margin-left: 50%
-  -webkit-transform: translate(-50%)
-  -moz-transform: translate(-50%)
-  -ms-transform: translate(-50%)
-  -o-transform: translate(-50%)
-  transform: translate(-50%)
-
-.imgSrc
-  display: none
-  position: absolute
-
-.award
-  position: absolute
-  border: none
-  width: 60px
-  height: 200px
-  top: 470px
-  margin-left: 50%
-  -webkit-transform: translate(-50%)
-  -moz-transform: translate(-50%)
-  -ms-transform: translate(-50%)
-  -o-transform: translate(-50%)
-  transform: translate(-50%)
-
-.dropBall1
-  content: ""
-  position: absolute
-  left: 0
-  top: 0
-  width: 60px
-  height: 60px
-  display: block
-  background: url(../img/1.png) no-repeat
-  background-size: contain
-  animation: drop 1s ease-out forwards
-  -webkit-animation: drop 1s ease-out forwards
-
-.dropBall2
-  content: ""
-  position: absolute
-  left: 0
-  top: 0
-  width: 60px
-  height: 60px
-  display: block
-  background: url(../img/2.png) no-repeat
-  background-size: contain
-  animation: drop 1s ease-out forwards
-  -webkit-animation: drop 1s ease-out forwards
-
-.dropBall3
-  content: ""
-  position: absolute
-  left: 0
-  top: 0
-  width: 60px
-  height: 60px
-  display: block
-  background: url(../img/3.png) no-repeat
-  background-size: contain
-  animation: drop 1s ease-out forwards
-  -webkit-animation: drop 1s ease-out forwards
-
-.dropBall4
-  content: ""
-  position: absolute
-  left: 0
-  top: 0
-  width: 60px
-  height: 60px
-  display: block
-  background: url(../img/4.png) no-repeat
-  background-size: contain
-  animation: drop 1s ease-out forwards
-  -webkit-animation: drop 1s ease-out forwards
-
-@keyframes drop
-  0%
-    transform: scale(0.7)
-
-  50%
-    transform: scale(1)
-
-  51%
-    transform: translateY(0px)
-
-  100%
-    transform: translateY(100px)
-
-
-@-webkit-keyframes drop
-  0%
-    -webkit-transform: scale(0.7)
-
-  50%
-    -webkit-transform: scale(1)
-
-  51%
-    -webkit-transform: translateY(0px)
-
-  100%
-    -webkit-transform: translateY(100px)
+  //防止上傳檔名過長超出框
+  label.custom-file-label
+    overflow: hidden

@@ -1,0 +1,143 @@
+extends _layout.pug
+
+block var
+	-var url = ''
+	-var link = 'html/'
+
+block title
+	title 首頁
+
+block css
+	link(href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css' rel='stylesheet')
+	link(href='css/index.css?v=1' rel='stylesheet')
+
+block js
+	script(src="plugins/jquery-validate-1.19.0/jquery.validate.min.js")
+	script(src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js")
+	script(src="plugins/chart-2.8.0/Chart.bundle.min.js")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js")
+	script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.common.dev.js')
+
+//---------------------------內容區Start---------------------------
+block content
+	
+	//- modal
+	#modal.d-none
+		.modal
+			.modalContent.text-center.animated.bounceInUp
+				i.fas.fa-times.modalClose(onclick='modalClose($(this))')
+				h5.font-weight-bold modal Title
+				p modal Text
+				//- form
+				form#formValidate(name="modal" action="" method="post")
+					.form-group.row.justify-content-start.text-left
+						.col-8.text-right
+							label.col-form-label.font-weight-bold(for='name') Name：
+						.col-14
+							input#name.form-control(name="name" type="text" placeholder='請輸入姓名')
+					.form-group.row.justify-content-start.text-left
+						.col-8.text-right
+							label.col-form-label.font-weight-bold(for='mobile') Phone：
+						.col-14
+							input#mobile.form-control(name="mobile" type="tel" placeholder='請輸入手機號碼')
+					.form-group.row.justify-content-start.text-left
+						.col-8.text-right
+							label.col-form-label.font-weight-bold(for='email') Email：
+						.col-14
+							input#email.form-control(name="email" type="email" placeholder='請輸入Email')
+					.form-group.row.justify-content-start.text-left
+						.col-8.text-right
+							label.col-form-label.font-weight-bold(for='select') Select：
+						.col-14
+							select#select.form-control(name="select" type="select")
+								option(value="select_A") select_A
+								option(value="select_B") select_B
+					.form-group.row.justify-content-start.text-left
+						.col-8.text-right
+							label.col-form-label.font-weight-bold(for='file') File：
+						.col-14
+							.custom-file
+								input#file.custom-file-input(name="file" type='file')
+								label.custom-file-label(for='customFile') 選擇檔案
+					.form-group.row.justify-content-start.text-left
+						.col-8.text-right
+							label.col-form-label.font-weight-bold(for='textarea') Textarea：
+						.col-14
+							textarea#textarea.form-control(rows='2')
+					.form-group.row.justify-content-start.align-items-center.text-left
+						.col-8.text-right
+							label.col-form-label.font-weight-bold(for='checkbox_A') Checkbox：
+						.col-14
+							.custom-control.custom-checkbox.custom-control-inline
+								input#checkbox_A.custom-control-input(name="checkbox" type='checkbox' value='checkbox_A' checked)
+								label.custom-control-label(for='checkbox_A') checkbox_A
+							.custom-control.custom-checkbox.custom-control-inline
+								input#checkbox_B.custom-control-input(name="checkbox" type='checkbox' value='checkbox_B')
+								label.custom-control-label(for='checkbox_B') checkbox_B
+					.form-group.row.justify-content-start.align-items-center.text-left
+						.col-8.text-right
+							label.col-form-label.font-weight-bold(for='radio_A') Radios：
+						.col-14
+							.custom-control.custom-radio.custom-control-inline
+								input#radio_A.custom-control-input(name='radio' type='radio' value='radio_A' checked)
+								label.custom-control-label(for='radio_A') radio_A
+							.custom-control.custom-radio.custom-control-inline
+								input#radio_B.custom-control-input(name='radio' type='radio' value='radio_B')
+								label.custom-control-label(for='radio_B') radio_B
+					//- button
+					button.confirm(type='submit' onclick='modalConfirmOpen()') 確定
+					button.cancel(type='reset' onclick='modalClose($(this))') 取消
+			.modalBg(onclick='modalClose($(this))')
+
+	//- modalConfirm
+	#modalConfirm.d-none
+		.modal.modalConfirm
+			.modalContent.text-center.animated.bounceInUp
+				i.fas.fa-times.modalClose(onclick='modalClose($(this))')
+				h5.font-weight-bold 確定要使用嗎?
+				p#data 2019/5/13 (月) 20:00-23:15
+				p#fail
+				p#success
+				.w-100
+				//- button
+				button.confirm(type='button' onclick='send()') 確定
+				button.cancel(type='button' onclick='modalClose($(this))') 取消
+			.modalBg(onclick='modalClose($(this))')
+
+	//- main
+	main
+		.container#test
+			button.btn.btn-primary.mb-5(type="button" onclick='send()') TEST
+			p#successa
+			input#hospital(type="text" name="hospital")
+			h1 {{title}}
+
+			#gacha
+				.bg
+					span#message 點擊抽獎
+					.lotterybg
+						canvas#myCanvas(width='285px', height='170px')
+						img.lighting(src='img/lighting.png')
+				img#start(src='img/start-btn.png', onclick='play()')
+				.award
+					span#awardBall
+				img#ball1.imgSrc(src='img/1.png')
+				img#ball2.imgSrc(src='img/2.png')
+				img#ball3.imgSrc(src='img/3.png')
+				img#ball4.imgSrc(src='img/4.png')
+
+			button#aa(type='button') 連結
+			.row
+				.col-24
+					canvas#myChart1.mb-5(width='600', height='400')
+				.col-24
+					canvas#myChart2.mb-5(width='600', height='400')
+				.col-12
+					canvas#myChart3(width='600', height='400')
+				.col-12
+					canvas#myChart4(width='600', height='400')
+
+			button.btn.btn-primary.mb-5(type="button" onclick='modalOpen()') TEST
+
+
+//---------------------------內容區End---------------------------
