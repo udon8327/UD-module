@@ -11,6 +11,7 @@ html(lang='zh-Hant-TW')
     meta(name='author' content='Bohan Huang')
     //- link(href='img/ico.ico' rel='shortcut icon')
     title datatable
+    |
     | <!--[if lt IE 9]>
     |   <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     |   <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -18,17 +19,222 @@ html(lang='zh-Hant-TW')
     //css
     link(href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css' rel='stylesheet')
     link(href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css' rel='stylesheet')
+    //- link(href='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/css/jquery.dataTables.min.css' rel='stylesheet')
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/css/dataTables.bootstrap4.min.css' rel='stylesheet')
     link(href='css/index.css' rel='stylesheet')
 
   body
 
-    header
-
-    main
-
-    footer
+    .container.pt-3
+      .table-responsive
+        table#table.table.table-striped.table-bordered.table-hover
+          thead
+            tr
+              th Name
+              th Position
+              th Office
+              th Age
+              th Start date
+              th Salary
+              th Edit
+          tbody
+            tr
+              td Tiger Nixon
+              td System Architect
+              td Edinburgh
+              td 61
+              td 2011/04/25
+              td $320,800
+              td
+                button.btn.btn-outline-secondary.btn-sm
+                  i.fas.fa-pen  編輯
+                button.btn.btn-danger.btn-sm
+                  i.fas.fa-trash-alt  刪除
+            tr
+              td Garrett Winters
+              td Accountant
+              td Tokyo
+              td 63
+              td 2011/07/25
+              td $170,750
+              td
+                button.btn.btn-outline-secondary.btn-sm
+                  i.fas.fa-pen  編輯
+                button.btn.btn-danger.btn-sm
+                  i.fas.fa-trash-alt  刪除
+            tr
+              td Ashton Cox
+              td Junior Technical Author
+              td San Francisco
+              td 66
+              td 2009/01/12
+              td $86,000
+              td
+                button.btn.btn-outline-secondary.btn-sm
+                  i.fas.fa-pen  編輯
+                button.btn.btn-danger.btn-sm
+                  i.fas.fa-trash-alt  刪除
+            tr
+              td Cedric Kelly
+              td Senior Javascript Developer
+              td Edinburgh
+              td 22
+              td 2012/03/29
+              td $433,060
+              td
+                button.btn.btn-outline-secondary.btn-sm
+                  i.fas.fa-pen  編輯
+                button.btn.btn-danger.btn-sm
+                  i.fas.fa-trash-alt  刪除
+            tr
+              td Airi Satou
+              td Accountant
+              td Tokyo
+              td 33
+              td 2008/11/28
+              td $162,700
+              td
+                button.btn.btn-outline-secondary.btn-sm
+                  i.fas.fa-pen  編輯
+                button.btn.btn-danger.btn-sm
+                  i.fas.fa-trash-alt  刪除
+            tr
+              td Brielle Williamson
+              td Integration Specialist
+              td New York
+              td 61
+              td 2012/12/02
+              td $372,000
+              td
+                button.btn.btn-outline-secondary.btn-sm
+                  i.fas.fa-pen  編輯
+                button.btn.btn-danger.btn-sm
+                  i.fas.fa-trash-alt  刪除
+            tr
+              td Herrod Chandler
+              td Sales Assistant
+              td San Francisco
+              td 59
+              td 2012/08/06
+              td $137,500
+              td
+                button.btn.btn-outline-secondary.btn-sm
+                  i.fas.fa-pen  編輯
+                button.btn.btn-danger.btn-sm
+                  i.fas.fa-trash-alt  刪除
+            tr
+              td Rhona Davidson
+              td Integration Specialist
+              td Tokyo
+              td 55
+              td 2010/10/14
+              td $327,900
+              td
+                button.btn.btn-outline-secondary.btn-sm
+                  i.fas.fa-pen  編輯
+                button.btn.btn-danger.btn-sm
+                  i.fas.fa-trash-alt  刪除
+            tr
+              td Colleen Hurst
+              td Javascript Developer
+              td San Francisco
+              td 39
+              td 2009/09/15
+              td $205,500
+              td
+                button.btn.btn-outline-secondary.btn-sm
+                  i.fas.fa-pen  編輯
+                button.btn.btn-danger.btn-sm
+                  i.fas.fa-trash-alt  刪除
+            tr
+              td Sonya Frost
+              td Software Engineer
+              td Edinburgh
+              td 23
+              td 2008/12/13
+              td $103,600
+              td
+                button.btn.btn-outline-secondary.btn-sm
+                  i.fas.fa-pen  編輯
+                button.btn.btn-danger.btn-sm
+                  i.fas.fa-trash-alt  刪除
+            tr
+              td Jena Gaines
+              td Office Manager
+              td London
+              td 30
+              td 2008/12/19
+              td $90,560
+              td
+                button.btn.btn-outline-secondary.btn-sm
+                  i.fas.fa-pen  編輯
+                button.btn.btn-danger.btn-sm
+                  i.fas.fa-trash-alt  刪除
+            tr
+              td Quinn Flynn
+              td Support Lead
+              td Edinburgh
+              td 22
+              td 2013/03/03
+              td $342,000
+              td
+                button.btn.btn-outline-secondary.btn-sm
+                  i.fas.fa-pen  編輯
+                button.btn.btn-danger.btn-sm
+                  i.fas.fa-trash-alt  刪除
+            tr
+              td Charde Marshall
+              td Regional Director
+              td San Francisco
+              td 36
+              td 2008/10/16
+              td $470,600
+              td
+                button.btn.btn-outline-secondary.btn-sm
+                  i.fas.fa-pen  編輯
+                button.btn.btn-danger.btn-sm
+                  i.fas.fa-trash-alt  刪除
+            tr
+              td Haley Kennedy
+              td Senior Marketing Designer
+              td London
+              td 43
+              td 2012/12/18
+              td $313,500
+              td
+                button.btn.btn-outline-secondary.btn-sm
+                  i.fas.fa-pen  編輯
+                button.btn.btn-danger.btn-sm
+                  i.fas.fa-trash-alt  刪除
+            tr
+              td Tatyana Fitzpatrick
+              td Regional Director
+              td London
+              td 19
+              td 2010/03/17
+              td $385,750
+              td
+                button.btn.btn-outline-secondary.btn-sm
+                  i.fas.fa-pen  編輯
+                button.btn.btn-danger.btn-sm
+                  i.fas.fa-trash-alt  刪除
+            tr
+              td Michael Silva
+              td Marketing Designer
+              td London
+              td 66
+              td 2012/11/27
+              td $198,500
+              td
+                button.btn.btn-outline-secondary.btn-sm
+                  i.fas.fa-pen  編輯
+                button.btn.btn-danger.btn-sm
+                  i.fas.fa-trash-alt  刪除
 
     //script
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/js/jquery.dataTables.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/js/dataTables.bootstrap4.min.js')
     script(src='js/index.js')
+
