@@ -18,17 +18,17 @@ main {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center; }
-    #formValidate .formItem .formItemLeft {
+    #formValidate .formItem .formItemName {
       -webkit-box-flex: 0;
       -ms-flex: 0 1 250px;
       flex: 0 1 250px;
       max-width: 250px;
       padding: 0 15px 0 0;
       text-align: right; }
-      #formValidate .formItem .formItemLeft label {
+      #formValidate .formItem .formItemName label {
         font-weight: bold;
         margin: 0; }
-    #formValidate .formItem .formItemRight {
+    #formValidate .formItem .formItemInput {
       -webkit-box-flex: 0;
       -ms-flex: 0 1 100%;
       flex: 0 1 100%;

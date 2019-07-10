@@ -31,43 +31,43 @@ html(lang='zh-Hant-TW')
       //- form
       form#formValidate(name="form" action="" method="post")
         .formItem
-          .formItemLeft
+          .formItemName
             label.form-control-label(for='name') Name
-          .formItemRight
+          .formItemInput
             input#name.form-control(name="name" type="text" placeholder='請輸入姓名')
         .formItem
-          .formItemLeft
+          .formItemName
             label(for='mobile') Phone
-          .formItemRight
+          .formItemInput
             input#mobile.form-control(name="mobile" type="tel" placeholder='請輸入手機號碼')
         .formItem
-          .formItemLeft
+          .formItemName
             label(for='email') Email
-          .formItemRight
+          .formItemInput
             input#email.form-control(name="email" type="email" placeholder='請輸入Email')
         .formItem
-          .formItemLeft
+          .formItemName
             label(for='select') Select
-          .formItemRight
+          .formItemInput
             select#select.form-control(name="select" type="select")
               option(value="select_A") select_A
               option(value="select_B") select_B
         .formItem
-          .formItemLeft
+          .formItemName
             label(for='file') File
-          .formItemRight
+          .formItemInput
             .custom-file
               input#file.custom-file-input(name="file" type='file')
               label.custom-file-label(for='customFile') 選擇檔案
         .formItem
-          .formItemLeft
+          .formItemName
             label(for='textarea') Textarea
-          .formItemRight
+          .formItemInput
             textarea#textarea.form-control(rows='2')
         .formItem
-          .formItemLeft
+          .formItemName
             label(for='checkbox_A') Checkbox
-          .formItemRight
+          .formItemInput
             .custom-control.custom-checkbox.custom-control-inline
               input#checkbox_A.custom-control-input(name="checkbox" type='checkbox' value='checkbox_A' checked)
               label.custom-control-label(for='checkbox_A') checkbox_A
@@ -75,9 +75,9 @@ html(lang='zh-Hant-TW')
               input#checkbox_B.custom-control-input(name="checkbox" type='checkbox' value='checkbox_B')
               label.custom-control-label(for='checkbox_B') checkbox_B
         .formItem
-          .formItemLeft
+          .formItemName
             label(for='radio_A') Radios
-          .formItemRight
+          .formItemInput
             .custom-control.custom-radio.custom-control-inline
               input#radio_A.custom-control-input(name='radio' type='radio' value='radio_A' checked)
               label.custom-control-label(for='radio_A') radio_A
@@ -87,7 +87,7 @@ html(lang='zh-Hant-TW')
 
         //- bootstrap格式 -start-
         .form-group.row
-          .col-8.text-right.pr-3
+          .col-8.text-Input.pr-3
             label.col-form-label.font-weight-bold(for='nameBs') Name
           .col-16
             input#nameBs.form-control(name="name" type="text" placeholder='請輸入姓名')
